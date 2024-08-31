@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Jay's Notes"
+  navbar:
+    left:
+      - about.qmd
+      - uncmbb.qmd
+      - techs.qmd
+      - talks.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+
+
