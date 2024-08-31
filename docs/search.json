@@ -21,10 +21,17 @@
     "text": "This is a post with executable code."
   },
   {
+    "objectID": "posts/this-is-a-test/index.html",
+    "href": "posts/this-is-a-test/index.html",
+    "title": "Test Post",
+    "section": "",
+    "text": "This is a test post!"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Jay’s Notes",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 31, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nAug 31, 2024\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nTest Post\n\n\n\n\n\n\n\n\n\n\n\nAug 31, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nAug 28, 2024\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   }
 ]
