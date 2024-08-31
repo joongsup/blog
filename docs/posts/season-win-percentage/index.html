@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Tristan O’Malley">
-<meta name="dcterms.date" content="2024-08-28">
+<meta name="dcterms.date" content="2017-10-22">
 
-<title>Welcome To My Blog – Jay’s Notes</title>
+<title>Season win percentage – Jay’s Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +67,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -120,27 +121,18 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Welcome To My Blog</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">news</div>
-              </div>
-                  </div>
+      <h1 class="title">Season win percentage</h1>
+                      </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
-      <div>
-      <div class="quarto-title-meta-heading">Author</div>
-      <div class="quarto-title-meta-contents">
-               <p>Tristan O’Malley </p>
-            </div>
-    </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 28, 2024</p>
+        <p class="date">October 22, 2017</p>
       </div>
     </div>
     
@@ -159,9 +151,201 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="thumbnail.jpg" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+<p>This past week, I was in a presentation training, and all the participants had to select a topic on the last day of training to give a (perfect) 15-min presentation. You know, after learning all the essential presentation skills, it was time to apply those fancy skills to work!</p>
+<p>I decided to talk about UNC MBB and its great stories behind each of the 3 championship seasons during Williams-era. I made a 5-page deck using Rmd-driven slidy presentation, and I am planning to post it here either in its raw form or after some adjustment using <a href="https://github.com/yihui/xaringan">xaringan</a>.</p>
+<p>The main driver of the presentation was each season’s win percentage, including all match types (regular, conference tournament, and NCAA tournament) as so:</p>
+<div class="cell" data-fig.heigth="8">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/winning_pct-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>After I gave the final presentation, I realized that looking at regular season win % leading up to NCAA tournament might be also interesting, especially to say anything about each team’s performance during the regular season and its final result at NCAA tournament level. So I made a small change in my script, and below is the regular season win % since 1949-50 season.</p>
+<div class="cell" data-fig.heigth="8">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/high_pct_seasons-1.png" class="img-fluid figure-img" width="1152"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>There goes the perfect championship winning season in 1956-57, Dean Smith’s first championship season in 1981-82, and his second one in 1992-93 season. And there goes Roy William’s first championship season in 2004-05, second one in 2008-09 season, and last but not least, his latest in 2016-17 season. (And yes I do see that horrible deep in early 2000s.)</p>
+<p>There are also some seasons that had as much success as the crowning seasons in terms of regular season win %s but without bearing the NCAA championship trophy. Looking at the top 10 seasons by the regular season win % should make it easy to identify them:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Season</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">games</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">wins</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">losses</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">pct</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">champ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1957</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1984</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.9629630</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2008</td>
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.9354839</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1987</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.9310345</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1976</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.9230769</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1982</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.9230769</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1998</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.9000000</td>
+<td style="text-align: left;">No</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2009</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.9000000</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1993</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.8965517</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2005</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.8965517</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>Interestingly, only (?) half of the top 10 seasons with highest win % ended up with NCAA championship. Other half not-so-fortunate seasons include some that I’m familiar with (such as 2008, 1998) and others that I’m not (such as 1984, 1987, and 1976). Having players data readily available for each season could’ve made it a breeze to look into those highly successful yet not so fortunate seasons, and it’s definitely something that I’d like to add to my data <a href="https://cran.r-project.org/web/packages/uncmbb/index.html">source</a>.</p>
+<p>Also notable is that not all the 6 NCAA championship winning seasons are included in the list of top 10 regular season win %. Turns out the latest crowning season is not part of this elite seasons, having lost 6 games in the regular season, a feat that is not indeed so elite compared to the 5 highly successful yet unforunate seasons from above.</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Season</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">games</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">wins</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">losses</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">pct</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">champ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1957</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1.0000000</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1982</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">0.9230769</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2009</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.9000000</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1993</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.8965517</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2005</td>
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">0.8965517</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2017</td>
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">0.8125000</td>
+<td style="text-align: left;">Yes</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+<p>But between a highly successful regular season without trophy versus a lukewarm (I don’t know, is 26-6 a lukewarm season?) regular season with a trophy at the end? I’ll take the trophy day in and day out!</p>
 
 
 

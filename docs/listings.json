@@ -2,9 +2,15 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/post-with-code/index.html",
-      "/posts/this-is-a-test/index.html",
-      "/posts/welcome/index.html"
+      "/posts/days-between-games/index.html",
+      "/posts/average-points-difference-through-first-10-games/index.html",
+      "/posts/points-difference-season-average/index.html",
+      "/posts/5th-year-players/index.html",
+      "/posts/season-first-game/index.html",
+      "/posts/season-win-percentage/index.html",
+      "/posts/losing-series/index.html",
+      "/posts/hello-world/index.html",
+      "/posts/winning-series/index.html"
     ]
   }
 ]
