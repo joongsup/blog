@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
     "objectID": "posts/r-markdown-revisited/index.html",
     "href": "posts/r-markdown-revisited/index.html",
     "title": "R Markdown in Vim",
@@ -362,5 +369,12 @@
     "title": "My old coding products",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nFortunately, I’ve kept those files in a portable device, which I’m not usually good at doing.↩︎\nInterestingly, it seems I didn’t have to “source” the files to use the functions. Matlab must have known where to look for the function names.↩︎\nE.g., see here.↩︎"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Jay’s Notes",
+    "section": "",
+    "text": "R Markdown centered data analysis workflow\n\n\n(how to use Python in R Markdown using reticulate package)\n\n\n\n\n\n\n\n\nOct 17, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nR Markdown in Vim\n\n\n\n\n\n\n\n\n\n\n\nApr 5, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nCoping with worst loss at home\n\n\n\n\n\n\n\n\n\n\n\nJan 13, 2019\n\n\n\n\n\n\n\n\n\n\n\n\nVim, vim-slime, and screen\n\n\n\n\n\n\n\n\n\n\n\nOct 6, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nGNU Make for Data Analysis Workflow Management\n\n\n\n\n\n\n\n\n\n\n\nAug 26, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nHome sweet dome\n\n\n\n\n\n\n\n\n\n\n\nAug 5, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nMy old coding products\n\n\n\n\n\n\n\n\n\n\n\nJul 27, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nComments on data analysis workflow\n\n\n\n\n\n\n\n\n\n\n\nJul 22, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nExternal presentation goal\n\n\n\n\n\n\n\n\n\n\n\nJul 22, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nInsert images in blogdown post, static directory, and xaringan\n\n\n\n\n\n\n\n\n\n\n\nMay 17, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nVim mode in RStudio\n\n\n\n\n\n\n\n\n\n\n\nMay 11, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nrJava and Mac OS\n\n\n\n\n\n\n\n\n\n\n\nMay 3, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nPackage uncmbb updated!\n\n\n\n\n\n\n\n\n\n\n\nApr 17, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nRSS feed and rbind github repo\n\n\n\n\n\n\n\n\n\n\n\nFeb 6, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nRun system commands or shell scripts from an interactive R session\n\n\n\n\n\n\n\n\n\n\n\nFeb 5, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nNew Hugo theme\n\n\n\n\n\n\n\n\n\n\n\nFeb 3, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nQuiz from work\n\n\n\n\n\n\n\n\n\n\n\nFeb 1, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nOne year after rstudio::conf 2017\n\n\n\n\n\n\n\n\n\n\n\nJan 29, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nBlog at rbind.io\n\n\n\n\n\n\n\n\n\n\n\nJan 29, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nSame day match results: UNC and Duke\n\n\n\n\n\n\n\n\n\n\n\nJan 7, 2018\n\n\n\n\n\n\n\n\n\n\n\n\nDays between games\n\n\n\n\n\n\n\n\n\n\n\nDec 15, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nAverage points difference through first 10 games\n\n\n\n\n\n\n\n\n\n\n\nDec 9, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nAverage points difference through first N games\n\n\n\n\n\n\n\n\n\n\n\nNov 25, 2017\n\n\n\n\n\n\n\n\n\n\n\n\n5th year players\n\n\n\n\n\n\n\n\n\n\n\nNov 5, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nSeason’s first game\n\n\n\n\n\n\n\n\n\n\n\nOct 29, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nSeason win percentage\n\n\n\n\n\n\n\n\n\n\n\nOct 22, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nLosing Series\n\n\n\n\n\n\n\n\n\n\n\nOct 8, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nHello World!\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2017\n\n\n\n\n\n\n\n\n\n\n\n\nWinning Series\n\n\n\n\n\n\n\n\n\n\n\nOct 1, 2017\n\n\n\n\n\n\nNo matching items"
   }
 ]

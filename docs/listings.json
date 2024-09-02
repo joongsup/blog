@@ -1,0 +1,36 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/rmarkdown-centered-data-analysis-workflow/index.html",
+      "/posts/r-markdown-revisited/index.html",
+      "/posts/worst-performance-at-home-sweet-dome/index.html",
+      "/posts/vim-and-slime/index.html",
+      "/posts/gnu-make-for-workflow-manager/index.html",
+      "/posts/home-sweet-dome/index.html",
+      "/posts/my-old-coding-products/index.html",
+      "/posts/comments-on-data-analysis-workflow/index.html",
+      "/posts/r-package-development-presentation/index.html",
+      "/posts/insert-images-in-blogdown-post/index.html",
+      "/posts/vim-mode-in-rstudio/index.html",
+      "/posts/rjava-and-mac-os/index.html",
+      "/posts/package-update/index.html",
+      "/posts/rss-feed/index.html",
+      "/posts/run-system-commands-from-an-interactive-r-session/index.html",
+      "/posts/new-hugo-theme/index.html",
+      "/posts/quiz-from-work/index.html",
+      "/posts/one-year-after-rstudio-conf-2017/index.html",
+      "/posts/blog-at-rbind-io/index.html",
+      "/posts/same-day-match-results-unc-and-duke/index.html",
+      "/posts/days-between-games/index.html",
+      "/posts/average-points-difference-through-first-10-games/index.html",
+      "/posts/points-difference-season-average/index.html",
+      "/posts/5th-year-players/index.html",
+      "/posts/season-first-game/index.html",
+      "/posts/season-win-percentage/index.html",
+      "/posts/losing-series/index.html",
+      "/posts/hello-world/index.html",
+      "/posts/winning-series/index.html"
+    ]
+  }
+]
