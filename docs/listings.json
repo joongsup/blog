@@ -2,6 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/one-or-two-things-i-wish-i-had-learned-in-school-the-beginning/index.html",
+      "/posts/external-speaking-hugo-xmin-distill/index.html",
+      "/posts/glimpses-of-change-or-another-day-with-a-win-over-duke/index.html",
       "/posts/screen-like-rstudio-project/index.html",
       "/posts/rmarkdown-centered-data-analysis-workflow/index.html",
       "/posts/r-markdown-revisited/index.html",
