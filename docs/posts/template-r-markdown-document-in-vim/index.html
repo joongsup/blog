@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2017-10-08">
+<meta name="dcterms.date" content="2019-12-16">
 
-<title>Losing Series – Jay’s Notes</title>
+<title>R Markdown template in Vim – Jay’s Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -67,8 +101,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -121,7 +153,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Losing Series</h1>
+      <h1 class="title">R Markdown template in Vim</h1>
                       </div>
   </div>
     
@@ -132,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 8, 2017</p>
+        <p class="date">December 16, 2019</p>
       </div>
     </div>
     
@@ -151,221 +183,49 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>In my first uncmbbtrivia <a href="http://uncmbbtrivia.netlify.com/post/winning-series/">post</a> last week, I looked at perfect winning series of UNC MBB team, particularly looking for those schools that the team has never lost to since 1949-50 season (minimum of 10 games). Again, say hello to: Citadel, Rutgers, Stanford, and Tulane :)</p>
-<p>This week, I look at the opposite end of the series history. Are there any schools that the UNC MBB team kept losing to? I know we haven’t been playing particularly well against Duke lately, so at least I knew depending on how far back I go that there will be some schools that we have losing series against.</p>
-<p>How about perfect losing series? I was thinking, ok there might be some schools that have winning series aginst us, but there’s no way that there’s a school that UNC MBB team never won, not even one game, having played at least some number of games.</p>
-<p>So to answer these questions, I <del>crunched some numbers</del> wrote some scripts (and I’ll write about this analysis process in near future), and below is what I got. First I look at schools that have winning series against UNC since 1949-50 season, having played UNC at least 10 times.</p>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: `mutate_()` was deprecated in dplyr 0.7.0.
-ℹ Please use `mutate()` instead.
-ℹ See vignette('programming') for more help
-ℹ The deprecated feature was likely used in the jutilr package.
-  Please report the issue to the authors.</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/since1950-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>So there they are: Indiana and Texas have winning records against UNC, having played us at least 10 times since 1949-50 season. We are not playing them this upcoming season, but as we can see in the following table, the two non-ACC teams played us quite recently, so it might take a while to be on top. Also of note is that even though we haven’t been playing well against Duke lately, we are still on top going back to 1949-50 season.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Opponent_School</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">first_game</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">last_game</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">games</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">wins</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">losses</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">win_perc</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Indiana</td>
-<td style="text-align: left;">1961-12-11</td>
-<td style="text-align: left;">2016-11-30</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0.4000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Texas</td>
-<td style="text-align: left;">1992-12-05</td>
-<td style="text-align: left;">2018-11-22</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0.2727</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<p>There are two variables that can give different answers to the original questions than above: starting season and minimum number of games played. As I said earlier, as much as I hate to admit, I was pretty sure we were having a losing series lately against Duke, and I was curious what other schools have been relatively better than us recently.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/since2000-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Opponent_School</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">first_game</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">last_game</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">games</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">wins</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">losses</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">win_perc</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: left;">2000-01-18</td>
-<td style="text-align: left;">2020-02-15</td>
-<td style="text-align: right;">37</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.4865</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Kentucky</td>
-<td style="text-align: left;">2000-12-02</td>
-<td style="text-align: left;">2018-12-22</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">0.4444</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Duke</td>
-<td style="text-align: left;">2000-02-03</td>
-<td style="text-align: left;">2020-03-07</td>
-<td style="text-align: right;">49</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">31</td>
-<td style="text-align: right;">0.3673</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<p>And there they are: Kentucky and Duke have been relatively better than us since the beginning of the millenium, although I’d think it’s only a matter of time that we’ll be on top again in the series with Kentucky. With Duke, I’m not so sure here. Numbers look pretty bad, and it might take a while to re-gain the bragging right (ok screw it. UNC &gt; Duke always Go Heels!). I’ll have to see, but I’m pretty sure the 4 seasons from the beginning of 2005 to the end of 2009 season saved us from what could have been a total embarrassment. Much more on this awesome rivalry in the future for sure.</p>
-<p>Finally, I was wondering if there is any school that we have never won, not even once since 1949-50 season, having played at least 2 games. It’s quite easy to do, because all I had to do was to change the variable “minimum number of games played” in the script that I used earlier. Regardless of amount of efforts involved, there shouldn’t be a school that’s having a perfect winning series against us, right?</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/perfect_losing-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Opponent_School</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">first_game</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">last_game</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">games</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">wins</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">losses</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">win_perc</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">New York University</td>
-<td style="text-align: left;">1951-01-04</td>
-<td style="text-align: left;">1966-12-17</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0.4286</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Indiana</td>
-<td style="text-align: left;">1961-12-11</td>
-<td style="text-align: left;">2016-11-30</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0.4000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Dayton</td>
-<td style="text-align: left;">1967-03-24</td>
-<td style="text-align: left;">2010-04-01</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.3333</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Texas</td>
-<td style="text-align: left;">1992-12-05</td>
-<td style="text-align: left;">2018-11-22</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0.2727</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Iowa</td>
-<td style="text-align: left;">1989-01-07</td>
-<td style="text-align: left;">2014-12-03</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0.2500</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Navy</td>
-<td style="text-align: left;">1950-12-28</td>
-<td style="text-align: left;">1998-03-12</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0.2500</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">West Virginia</td>
-<td style="text-align: left;">1949-12-28</td>
-<td style="text-align: left;">1965-12-31</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0.0000</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
-<p>Well, what do I know. First of all, there are Indiana and Texas teams that I touched on in earlier part of this post (it’s sort of re-affirming to see them again in this output). Then, there go some other schools that we are having losing series records, albeit having beaten them at least once: New York University (New York University?!), Dayton, Iowa, and Navy.</p>
-<p>Then there is West Virgina. It turns out we have never won against West Virginia team, having played them 5 times total since 1949-50 season! Starting years were different in two cases, but it might take even longer for UNC to get even with this team than with Duke, because there’s at least two games to be played against Duke each year, whereas it seems very unlikely that we’ll see West Virginia in schedule, considering the last time we played them was on the new years eve in 1965. But what do I know. I’m just another casual fan here, trying to dig up some gems from the UNC match history data.</p>
+<p>In my last post, I wrote about an R Markdown centered data analysis workflow that I found to be helpful for many of my work. Helpful, in terms of improving code reusability and remembering what has been done for a particular project. Idea is that I’d start any (ad-hoc) data analysis project with a home Rmd document to store both codes and narratives.</p>
+<p>It followed naturally that I soon started hoping to start a new Rmd document with some predefined default setting in Vim, e.g., metadata such as title, date, and output options, etc., as well as R packages that I’d use all the time. I knew RStudio IDE provides template functionality, but I wanted to be able to do it in the tool/environment that I spend most time in daily. So I started looking around, and quickly ran into several blog posts on how to use Vim templates<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>It comes down to the following two components:</p>
+<ol type="1">
+<li>a skeleton file for a specific target file extension, e.g., an Rmd skeleton file (for .Rmd files), and</li>
+<li>Vim commands to insert the contents of the skeleton file to the newly created file with the target extension</li>
+</ol>
+<p>For example, an Rmd skeleton file (e.g., skeleton.Rmd) can contain yaml headers and an R setup chunk like below.</p>
+<pre><code>---
+title: ""
+date: "yyyy-mm-dd (updated 'r Sys.Date()')"
+output:
+    html_document:
+        toc: true
+        number_sections: true
+        theme: flatly
+        highlight: kate
+---</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>`r ''````{r setup_r, eval = FALSE}</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>library(ggplot2)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>library(dplyr)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>library(kableExtra)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>library(reticulate)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>knitr::opts_chunk$set(fig.width = 12, fig.height = 8)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>use_python(PYTHON_PATH) # PYTHON_PATH defined in .Rprofile</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introduction</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>While not the main topic, I had to look up how to display my yaml headers and R code chunk verbatim in a post like above, and found out some tricks from the code <a href="https://github.com/rstudio/rmarkdown-book/blob/master/02-basics.Rmd">repo</a> for the R Markdown: The Definitive Guide book.</p>
+<p>Once skeleton.Rmd is ready (e.g., ~/.vim/templates/skeleton.Rmd), Vim can insert the contents of the skeleton file to the newly created .Rmd file with autocmd like so:</p>
+<p>```{{sh, eval = FALSE}} if has(“autocmd”) augroup templates autocmd BufNewFile *.Rmd 0r ~/.vim/templates/skeleton.Rmd augroup END endif</p>
+<p>```</p>
+<p>Above Vim codes resides in .vimrc file and reads in the skeleton.Rmd file whenever a new .Rmd file is created.</p>
 
 
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>I followed this blog <a href="https://shapeshed.com/vim-templates/">post</a> on how to use Vim templates<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2017-10-08">
+<meta name="dcterms.date" content="2019-04-05">
 
-<title>Losing Series – Jay’s Notes</title>
+<title>R Markdown in Vim – Jay’s Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,8 +67,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../../site_libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="../../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -121,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Losing Series</h1>
+      <h1 class="title">R Markdown in Vim</h1>
                       </div>
   </div>
     
@@ -132,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 8, 2017</p>
+        <p class="date">April 5, 2019</p>
       </div>
     </div>
     
@@ -151,221 +149,55 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>In my first uncmbbtrivia <a href="http://uncmbbtrivia.netlify.com/post/winning-series/">post</a> last week, I looked at perfect winning series of UNC MBB team, particularly looking for those schools that the team has never lost to since 1949-50 season (minimum of 10 games). Again, say hello to: Citadel, Rutgers, Stanford, and Tulane :)</p>
-<p>This week, I look at the opposite end of the series history. Are there any schools that the UNC MBB team kept losing to? I know we haven’t been playing particularly well against Duke lately, so at least I knew depending on how far back I go that there will be some schools that we have losing series against.</p>
-<p>How about perfect losing series? I was thinking, ok there might be some schools that have winning series aginst us, but there’s no way that there’s a school that UNC MBB team never won, not even one game, having played at least some number of games.</p>
-<p>So to answer these questions, I <del>crunched some numbers</del> wrote some scripts (and I’ll write about this analysis process in near future), and below is what I got. First I look at schools that have winning series against UNC since 1949-50 season, having played UNC at least 10 times.</p>
+<section id="two-ways-to-render-r-markdown-documents" class="level2">
+<h2 class="anchored" data-anchor-id="two-ways-to-render-r-markdown-documents">Two ways to render R Markdown documents</h2>
+<p>I saw this tweet a couple of days ago and decided to look for ways to use R Markdown more at work.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: `mutate_()` was deprecated in dplyr 0.7.0.
-ℹ Please use `mutate()` instead.
-ℹ See vignette('programming') for more help
-ℹ The deprecated feature was likely used in the jutilr package.
-  Please report the issue to the authors.</code></pre>
-</div>
 <div class="cell-output-display">
-<div>
+{{% tweet "1108925218850893832" %}}
+</div>
+</div>
+<p>It’s not like I haven’t tried to use R Markdown before<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, but at the time of this <a href="https://joongsup.rbind.io/post/2018/07/22/comments-on-data-analysis-workflow/">post</a>, I hadn’t been able to find a way to effectively incorporate R Markdown at work for various reasons. Since then, however, I added a couple of new tools to my data analysis toolbox<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, which I felt might help make it work this time using R Markdown more at work.</p>
+<section id="render-r-markdown-from-vim-without-opening-r" class="level3">
+<h3 class="anchored" data-anchor-id="render-r-markdown-from-vim-without-opening-r">Render R Markdown from Vim (without opening R)</h3>
+<p>And there was a Vim plug-in for R Markdown indeed! In fact, a quick online search led me to three relevant/required Vim plug-ins: <a href="https://github.com/vim-pandoc/vim-rmarkdown">vim-rmarkdown</a>, <a href="https://github.com/vim-pandoc/vim-pandoc">vim-pandoc</a>, and <a href="https://github.com/vim-pandoc/vim-pandoc-syntax">vim-pandoc-syntax</a>.</p>
+<p>Following the plug-in instructions, as well as this helpful configuration <a href="https://stackoverflow.com/questions/34314214/vim-rmarkdown-plugin-configuration">tip</a>, I was up and running with vim-rmarkdown plug-in in no time.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="index_files/figure-html/since1950-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="../../img/vim_rmd_work.gif" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Rendering R Markdown Document from within Vim</figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>So there they are: Indiana and Texas have winning records against UNC, having played us at least 10 times since 1949-50 season. We are not playing them this upcoming season, but as we can see in the following table, the two non-ACC teams played us quite recently, so it might take a while to be on top. Also of note is that even though we haven’t been playing well against Duke lately, we are still on top going back to 1949-50 season.</p>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Opponent_School</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">first_game</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">last_game</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">games</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">wins</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">losses</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">win_perc</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Indiana</td>
-<td style="text-align: left;">1961-12-11</td>
-<td style="text-align: left;">2016-11-30</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0.4000</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Texas</td>
-<td style="text-align: left;">1992-12-05</td>
-<td style="text-align: left;">2018-11-22</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0.2727</td>
-</tr>
-</tbody>
-</table>
+<p>In addition to the syntax highlighting (from vim-pandoc/vim-pandoc-syntax plug-ins), the vim-rmarkdown plug-in provides a function to render a source R Markdown document into output types of interest (e.g., html) from within the source R Markdown document in Vim. <strong>:RMarkdown</strong> command does the job, and it displays successful run message once the rendering is complete<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+</section>
+<section id="render-r-markdown-and-send-email-from-r" class="level3">
+<h3 class="anchored" data-anchor-id="render-r-markdown-and-send-email-from-r">Render R Markdown (and send email) from R</h3>
+<p>R Markdown documents can also be rendered from R too, by the usual <strong>rmarkdown::render()</strong> function. Generally one can review the rendered output by clicking the output file, but what if such clicking/reviewing is not an option? That’s a challenge I’m facing at work. Ok, maybe there’s a way to click/review a remote file, and if that’s the case, then nobody hasn’t told me how to just yet :)</p>
+<p>I’m sure there’s a better way, but the workaround I came up with has two steps:</p>
+<ul>
+<li>Render R Markdown document (rmarkdown::render())</li>
+<li>Send an email to self with rendered output as attachment (sendmailR::sendmail()).</li>
+</ul>
+<p>I didn’t know about the sendmailR package before, but the package lets you send emails from within R. I ended up writing a couple of wrapper functions (saved in my personal package) so that rendering and sending email can be done all at once by a single function call. Yes there are some drawbacks<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, but I’ve been happy with the workflow so far.</p>
 
 
-</div>
-</div>
-<p>There are two variables that can give different answers to the original questions than above: starting season and minimum number of games played. As I said earlier, as much as I hate to admit, I was pretty sure we were having a losing series lately against Duke, and I was curious what other schools have been relatively better than us recently.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/since2000-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Opponent_School</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">first_game</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">last_game</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">games</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">wins</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">losses</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">win_perc</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Virginia</td>
-<td style="text-align: left;">2000-01-18</td>
-<td style="text-align: left;">2020-02-15</td>
-<td style="text-align: right;">37</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">0.4865</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Kentucky</td>
-<td style="text-align: left;">2000-12-02</td>
-<td style="text-align: left;">2018-12-22</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">10</td>
-<td style="text-align: right;">0.4444</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Duke</td>
-<td style="text-align: left;">2000-02-03</td>
-<td style="text-align: left;">2020-03-07</td>
-<td style="text-align: right;">49</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">31</td>
-<td style="text-align: right;">0.3673</td>
-</tr>
-</tbody>
-</table>
+</section>
+</section>
 
 
-</div>
-</div>
-<p>And there they are: Kentucky and Duke have been relatively better than us since the beginning of the millenium, although I’d think it’s only a matter of time that we’ll be on top again in the series with Kentucky. With Duke, I’m not so sure here. Numbers look pretty bad, and it might take a while to re-gain the bragging right (ok screw it. UNC &gt; Duke always Go Heels!). I’ll have to see, but I’m pretty sure the 4 seasons from the beginning of 2005 to the end of 2009 season saved us from what could have been a total embarrassment. Much more on this awesome rivalry in the future for sure.</p>
-<p>Finally, I was wondering if there is any school that we have never won, not even once since 1949-50 season, having played at least 2 games. It’s quite easy to do, because all I had to do was to change the variable “minimum number of games played” in the script that I used earlier. Regardless of amount of efforts involved, there shouldn’t be a school that’s having a perfect winning series against us, right?</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/perfect_losing-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="cell-output-display">
-<table class="table caption-top table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">Opponent_School</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">first_game</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">last_game</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">games</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">wins</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">losses</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">win_perc</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">New York University</td>
-<td style="text-align: left;">1951-01-04</td>
-<td style="text-align: left;">1966-12-17</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">0.4286</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Indiana</td>
-<td style="text-align: left;">1961-12-11</td>
-<td style="text-align: left;">2016-11-30</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0.4000</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Dayton</td>
-<td style="text-align: left;">1967-03-24</td>
-<td style="text-align: left;">2010-04-01</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0.3333</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Texas</td>
-<td style="text-align: left;">1992-12-05</td>
-<td style="text-align: left;">2018-11-22</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">0.2727</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Iowa</td>
-<td style="text-align: left;">1989-01-07</td>
-<td style="text-align: left;">2014-12-03</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0.2500</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Navy</td>
-<td style="text-align: left;">1950-12-28</td>
-<td style="text-align: left;">1998-03-12</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">0.2500</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">West Virginia</td>
-<td style="text-align: left;">1949-12-28</td>
-<td style="text-align: left;">1965-12-31</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">0.0000</td>
-</tr>
-</tbody>
-</table>
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
-
-</div>
-</div>
-<p>Well, what do I know. First of all, there are Indiana and Texas teams that I touched on in earlier part of this post (it’s sort of re-affirming to see them again in this output). Then, there go some other schools that we are having losing series records, albeit having beaten them at least once: New York University (New York University?!), Dayton, Iowa, and Navy.</p>
-<p>Then there is West Virgina. It turns out we have never won against West Virginia team, having played them 5 times total since 1949-50 season! Starting years were different in two cases, but it might take even longer for UNC to get even with this team than with Duke, because there’s at least two games to be played against Duke each year, whereas it seems very unlikely that we’ll see West Virginia in schedule, considering the last time we played them was on the new years eve in 1965. But what do I know. I’m just another casual fan here, trying to dig up some gems from the UNC match history data.</p>
-
-
-
-</main> <!-- /main -->
+<ol>
+<li id="fn1"><p>After all, I use R Markdown for all the posts in this blog :)<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>E.g., incorporating <a href="https://joongsup.rbind.io/post/2018/10/06/Vim-and-slime/">Vim-slime</a> and GNU <a href="https://joongsup.rbind.io/post/2018/08/26/gnu-make-for-workflow-manager/">Make</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Maybe I’m missing something, but it would be even better if it shows the rendering stage, e.g., completion %<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>One main drawback I found, ironically, is that I have yet to find a way to download the source R Markdown document using the code_download option as in the above tweet. Maybe the source R Markdown document also needs to be sent via email along with the output?<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

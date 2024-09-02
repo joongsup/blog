@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2019-10-17">
 
-<title>About – Jay’s Notes</title>
+<title>R Markdown centered data analysis workflow – Jay’s Notes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,21 +24,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -67,17 +69,17 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Jay’s Notes</span>
     </a>
   </div>
@@ -88,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
@@ -114,38 +116,105 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">R Markdown centered data analysis workflow</h1>
+            <p class="subtitle lead">(how to use Python in R Markdown using reticulate package)</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">October 17, 2019</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="profile.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">About</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<p>About this blog</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://linkedin.com" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+
+
+<section id="tldr" class="level2">
+<h2 class="anchored" data-anchor-id="tldr">TLDR</h2>
+<p>A summary is <a href="http://htmlpreview.github.com/?https://github.com/joongsup/workflow/blob/master/workflow.html">here</a>, and the codes are <a href="https://github.com/joongsup/workflow/">here</a>.</p>
+<p>I’m a workflow fanatic. Ok, fanatic maybe too strong a word, but that’s what I told one of my R stars when I met her in person recently, who’s also passionate about (in my views) project workflow and “generally doing basic stuff really, really well”. I can’t pinpoint how and why I became so interested in establishing a good project workflow, but it’s one of those things that I really wish I had mastered while I was still in school. Maybe the lack of such training during graduate school led me down this path of caring about research computing education as well as getting involved with Software/Data Carpentry, which I wish I had known about it back then<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+</section>
+<section id="my-pursuit-of-a-data-analysis-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="my-pursuit-of-a-data-analysis-workflow">My pursuit of a data analysis workflow</h2>
+<p>(also something about notebooks)</p>
+<p>In any case, coming up with a workflow that suits me for most of my needs either at home or at work has been a long journey of mine, and I’ve written a couple of posts on here for some “milestones”.</p>
+<ul>
+<li><a href="https://joongsup.rbind.io/post/2019/04/05/r-markdown-revisited/">R Markdown in Vim</a></li>
+<li><a href="https://joongsup.rbind.io/post/2018/10/06/vim-and-slime/">Vim, vim-slime, and screen</a></li>
+<li><a href="https://joongsup.rbind.io/post/2018/08/26/gnu-make-for-workflow-manager/">GNU Make for Data Analysis Workflow Management</a></li>
+<li><a href="https://joongsup.rbind.io/post/2018/07/22/comments-on-data-analysis-workflow/">Comment on data analysis workflow</a></li>
+<li><a href="https://joongsup.rbind.io/post/2018/02/05/run-system-commands-or-shell-sripts-from-an-interactive-r-session/">Run system commands or shell scripts from an interactive R session</a></li>
+</ul>
+<p>I haven’t written about it yet, but I also started using Python pretty heavily at work, and my interest in workflow since then has been about how to put together codes (R/Python/SQL) and by-products (findings/plots) more efficiently in R Markdown. The idea of combining codes and prose is not new at all, with ever growing popularity of using notebooks by data scientists for doing just that. I have used notebooks too (e.g., RCloud, Jupyter Notebook, etc.) in the past, but for various reasons it never stuck with me. It’s still hard to pinpoint exatly what, but if I have to guess, among many pros and cons of notebooks, what didn’t work for me was the lack of the final/intermediate by-product (e.g., a summary document with findings, tables, and plots) that I can refer back to anytime in the future. Most likely due to how I used it (inefficiently, that is), my notebooks were always in-progress, never-ending, ever-changing, without the merit of reusable codes. Yihui’s <a href="https://yihui.name/en/2018/09/notebook-war/">post</a> on notebooks, IDEs, and R Markdown comes to mind.</p>
+</section>
+<section id="what-im-hoping-for-in-a-data-analysis-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="what-im-hoping-for-in-a-data-analysis-workflow">What I’m hoping for in a data analysis workflow</h2>
+<p>R Markdown seemed a promising component of a workflow, especially in terms of being a central place where I can document what I tried, which scripts I used, and finally the findings from each code exeucution that can help me understand a project’s “whereabout” anytime I needed to. And here I’m hoping my workflow to</p>
+<ul>
+<li>include Vim, my text editor of choice</li>
+<li>be language-agnostic (within R and Python)</li>
+<li>allow quick interactive code checking</li>
+<li>produce a summary document that includes codes/tables/plots/findings</li>
+<li>promote code reusability</li>
+</ul>
+<p>After several trial-and-error, I feel like what I have at the moment is a good working version of an R Markdown centered workflow, specifically for data analysis using text editor of choice, Vim. I understand there are several components here that can make this workflow rather specific than general (e.g., Vim, not RStudio), but I believe the general idea can still be helpful for others as well.</p>
+</section>
+<section id="so-whats-it-look-like" class="level2">
+<h2 class="anchored" data-anchor-id="so-whats-it-look-like">So, what’s it look like?</h2>
+<p>Initially, I was going to write about the workflow with an example in this blog post, but since it included a working example, it became a bit confusing structure-wise to include the working example (I’m sure there’s a way to do it), so I decided to use github <a href="https://github.com/joongsup/workflow">repo</a> instead for code examples as well as the final summary document. So think of this blog post as an introduction/motivation for the actual work that is stored in github.</p>
+<p>As the <a href="http://htmlpreview.github.io/?https://github.com/joongsup/workflow/blob/master/workflow.html">subtitle</a> of the main document in the repo says, I also talk about how to use Python codes in R Markdown using <a href="https://rstudio.github.io/reticulate/">reticulate</a> package. In fact, three types of coding examples are given:</p>
+<ul>
+<li>how to use R codes</li>
+<li>how to use Python codes</li>
+<li>how to use R objects in Python, and Python objects in R</li>
+</ul>
+<p>For each type of examples, three different scenarios are used in terms of how to incorporate corresponding codes into the R Markdown document.</p>
+<ul>
+<li>work with code snippets directly in R Markdown</li>
+<li>import/source function definitions from separate script files and use them in R Markdown</li>
+<li>display outputs from separate script files in R Markdown</li>
+</ul>
+<p>Although not perfect and still under development, I feel like I now have a portable and transferable workflow for data analysis that I can mix and match depending on the scope of any projects. As someone said, just trying to do “basic stuff really, really well”, so that it just “flows”!</p>
+</section>
+<section id="relevantfuture-work" class="level2">
+<h2 class="anchored" data-anchor-id="relevantfuture-work">Relevant/future work</h2>
+<ul>
+<li><p>Around the time I started reconsidering R Markdown as part of my workflow, I ran into Emily Riederer’s <a href="https://emilyriederer.netlify.com/post/rmarkdown-driven-development/">post</a> on RMarkdown driven development (nicely worded!), and it’s a great read. I haven’t tried to link my workflow in terms of packaging, which I also care about a lot, but such conversion seems an interesting/challenging idea. E.g., as it stands, my home R Markdown document lives in the root project directory, which is not allowed in R package structure. I’m sure I can just move the R Markdown to /doc directory, but there could be something I’m missing here.</p></li>
+<li><p>Just last night, I ran into Miles McBain’s tweet that was something about Rmd and reproducibility (so timely!):</p></li>
+</ul>
+<p>Interactive use (of R and Python shells) in a data analysis project workflow and “search path” are two topics that I think about quite a lot these days, but in terms of loss of reproducibility when Rmd files are rendered in console, I must have been impacted by it, as in the workflow I described in this post, I render my home R Markdown document in console. Either I might have overlooked its impact or I haven’t run into any such loss of reproducibility.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>It seems they were getting seriuos just as I was wrapping up my time in school<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -166,6 +235,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
