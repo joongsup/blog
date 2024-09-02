@@ -35,7 +35,7 @@ So putting these together, here's what I typically do first thing in the morning
 1. Open terminal and ssh into a server. Open the script file, e.g., an R script, that I need to work on. Let's call this a "source" tab. 
 
 ```{r source, echo = FALSE, fig.cap = "Source screenshot", out.width = "75%", fig.show = 'hold', fig.align = 'center'}
-knitr::include_graphics(c("~/Projects/blog/blog1/img/slime_src.png"))
+knitr::include_graphics(c("~/Projects/blogs/blog/img/slime_src.png"))
 ```
 
 2. Open another tab in the same terminal window (cmd-T) and ssh into the same server. Start a named screen session by `screen -S R`.
@@ -49,7 +49,7 @@ This will open a screen sesion whose name is "R". Once in it, start an R shell, 
 3. When working on some code chunks, test them by sending the code chunk from the "source" tab (from #1) to the "console" tab (from #2). Selecting code chunks in visual mode in Vim and sending them to the console screen by <ctrl-c><ctrl-c> using Vim-slime takes some getting used to, but it's been worth it :)
 
 ```{r workflow, echo = FALSE, fig.cap = "Vim-slime workflow screenshots", out.width = "75%", fig.show = 'hold', fig.align = 'center'}
-knitr::include_graphics(c("~/Projects/blog/blog1/img/out.gif"))
+knitr::include_graphics(c("~/Projects/blogs/blog/img/out.gif"))
 ```
 
 When code chunks are sent for the first time in a session, Vim-slime asks for the destination screen session name, and I entered R, which was my screen session name from step 2 above. It then asks for screen window name, and I just leave it as is (default 0).   

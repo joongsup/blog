@@ -23,14 +23,14 @@ From the Wikipedia on [make (software)](https://en.wikipedia.org/wiki/Make_(soft
 It makes sense many tutorials on make (especially in the context of using it together with R) that I encountered used generating some documents as a use case. E.g., use make to streamline updating plots and inserting newly refreshed plots in the final document output. My immediate need didn't involve updating a report over and over, but rather looked something like Figure \@ref(fig:workflow):
 
 ```{r workflow, echo = FALSE, fig.cap = "Base Workflow", out.width = "40%", fig.pos = 'h', fig.align = 'center'}
-knitr::include_graphics("~/Projects/blog/blog1/img/makefile_workflow.png")
+knitr::include_graphics("~/Projects/blogs/blog/img/makefile_workflow.png")
 ```
 
 Basically this example workflow involves generating/refreshing several hive tables, training ML models, and joining hive tables. Sometimes all 5 steps need to be run in a proper sequence, other times only a subset of steps need to be run, like Figure \@ref(fig:scenarios): 
 
 ```{r scenarios, echo = FALSE, fig.cap = "Workflow Scenarios", out.width = "40%", fig.show = 'hold', fig.align = 'center'}
 # note fig.show for side-by-side images!
-knitr::include_graphics(c("~/Projects/blog/blog1/img/makefile_ex_1.png", "~/Projects/blog/blog1/img/makefile_ex_3.png"))
+knitr::include_graphics(c("~/Projects/blogs/blog/img/makefile_ex_1.png", "~/Projects/blogs/blog/img/makefile_ex_3.png"))
 ```
 
 So if there's anyone out there who's on the edge and haven't started using a tool like make for workflow management, thinking such tool is not relevant in data analysis, I hope above figures (and this post) provide some convincing argument for using it.

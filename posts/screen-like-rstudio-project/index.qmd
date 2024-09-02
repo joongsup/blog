@@ -25,7 +25,7 @@ screen -t git
 would start a Screen session called "projectA", and from within it, 3 additional windows called R, Python, and git are created. 
 
 ```{r example, echo = FALSE, fig.cap = "Screen session and windows", out.width = "100%", fig.pos = 'h', fig.align = 'center'}
-knitr::include_graphics("~/Projects/blog/blog1/img/screen_session_windows.gif")
+knitr::include_graphics("~/Projects/blogs/blog/img/screen_session_windows.gif")
 ```
 
 You'll notice that once the Screen session called "projectA" is created, default window called "bash" is started within the session, followed by subsequent windows called R, Python, and git, respectively via screen -t calls. The session name, as well as the window names are displayed at the bottom, and that can be configured in .screenrc file like so:
@@ -85,15 +85,15 @@ For RStudio users, if you squint a bit, this Screen session/windows workflow see
 
 
 ```{r projA, echo = FALSE, fig.cap = "Screen session for Project A", out.width = "100%", fig.pos = 'h', fig.align = 'center'}
-knitr::include_graphics("~/Projects/blog/blog1/img/screen_projA.gif")
+knitr::include_graphics("~/Projects/blogs/blog/img/screen_projA.gif")
 ```
 
 ```{r projB, echo = FALSE, fig.cap = "Screen session for Project B", out.width = "100%", fig.pos = 'h', fig.align = 'center'}
-knitr::include_graphics("~/Projects/blog/blog1/img/screen_projB.gif")
+knitr::include_graphics("~/Projects/blogs/blog/img/screen_projB.gif")
 ```
 
 ```{r projAll, echo = FALSE, fig.cap = "Screen like RStudio Project", out.width = "100%", fig.pos = 'h', fig.align = 'center'}
-knitr::include_graphics("~/Projects/blog/blog1/img/screen_projAll.gif")
+knitr::include_graphics("~/Projects/blogs/blog/img/screen_projAll.gif")
 ```
 
 Hope this post helps anyone interested in data science workflow (esp using Vim), but most importantly, hope I can claim somehow in next couple of days that I have contributed to breaking the team's bad karma. Go Heels!

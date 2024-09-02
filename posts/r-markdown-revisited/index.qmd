@@ -20,7 +20,7 @@ And there was a Vim plug-in for R Markdown indeed! In fact, a quick online searc
 Following the plug-in instructions, as well as this helpful configuration [tip](https://stackoverflow.com/questions/34314214/vim-rmarkdown-plugin-configuration), I was up and running with vim-rmarkdown plug-in in no time. 
 
 ```{r all, echo = FALSE, fig.cap = "Rendering R Markdown Document from within Vim", out.width = "100%", fig.pos = 'h', fig.align = 'center'}
-knitr::include_graphics("~/Projects/blog/blog1/img/vim_rmd_work.gif")
+knitr::include_graphics("~/Projects/blogs/blog/img/vim_rmd_work.gif")
 ```
 
 In addition to the syntax highlighting (from vim-pandoc/vim-pandoc-syntax plug-ins), the vim-rmarkdown plug-in provides a function to render a source R Markdown document into output types of interest (e.g., html) from within the source R Markdown document in Vim. **:RMarkdown** command does the job, and it displays successful run message once the rendering is complete^[Maybe I'm missing something, but it would be even better if it shows the rendering stage, e.g., completion %].
