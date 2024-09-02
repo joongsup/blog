@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/screen-like-rstudio-project/index.html",
       "/posts/rmarkdown-centered-data-analysis-workflow/index.html",
       "/posts/r-markdown-revisited/index.html",
       "/posts/worst-performance-at-home-sweet-dome/index.html",
