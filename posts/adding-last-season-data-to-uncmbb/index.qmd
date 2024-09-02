@@ -1,0 +1,22 @@
+---
+title: Adding last season data to uncmbb
+date: '2019-10-25'
+draft: true
+---
+
+code changes needed due to change in source data structure
+- devtools::use_data --> usethis::use_data
+- devtools::build_win --> devtools::check_win_dev|release|oldrelease
+- devtools::check_rhub seems a new checking item
+CRAN-RELEASE file is created upon submission
+  Uploading package & comments
+  Confirming submission
+  Package submission successful.
+  Check your email for confirmation link.
+  ✔ Setting active project to '/Users/jl939a/projects/uncmbb'
+  Don't forget to tag this release once accepted by CRAN
+  ✔ Adding '^CRAN-RELEASE$' to '.Rbuildignore'
+  ✔ Setting active project to '<no active project>'
+CRAN-RELEASE content:
+This package was submitted to CRAN on 2019-10-25.
+Once it is accepted, delete this file and tag the release (commit 6ca69127ce).

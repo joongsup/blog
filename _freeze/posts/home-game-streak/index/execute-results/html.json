@@ -1,0 +1,15 @@
+{
+  "hash": "ae963fb8d0a7bf2fd6db1394560ab444",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Home game streak\ndate: '2018-10-06'\ndraft: true\n\n---\n\n\n\nThe schedule for the 2018-2019 UNC MBB season has been out, and I ran into a blog post that said something about some teams getting preferable schedules than others, in that those lucky teams get to play three consecutive games at home and in some case, not having to face the same number of consecutive games on the road. I remembered UNC team had a touch streak last season, having to play 3 in a row on the road, and with the current 15 member system (since 2010), such imbalance in schedule is bound to happen eventually. \n\nSo I was curious in terms of playing consecutive home games and road games, who's been lucky all these years. Let's see. \n\n\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

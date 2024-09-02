@@ -1,0 +1,17 @@
+{
+  "hash": "1f2465f23a09da8cab221191037fd8e0",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Home and home score difference\ndate: '2019-02-04'\ndraft: true\n---\n\n::: {.cell}\n::: {.cell-output .cell-output-stderr}\n\n```\n`summarise()` has grouped output by 'Season'. You can override using the\n`.groups` argument.\nAdding missing grouping variables: `season_opp`\n```\n\n\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# score diff between 1st and 2nd games\n# too many to show! move on to next \np <- df_hnh %>% ungroup() %>%\n                ggplot(aes(x = game_order, y = score_diff)) +\n                geom_point(aes(group = season_opp, colour = season_opp)) #+\n                #geom_line(aes(group = season_opp, colour = season_opp)) +\nprint(p)\n```\n\n::: {.cell-output-display}\n![](index_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\n# score change distribution\ndf_hnh_wide <- df_hnh %>% ungroup() %>%\n                          select(Season, Opponent_School, game_order, score_diff) %>%\n                          spread(key = game_order, value = score_diff) %>%\n                          mutate(turnaround = game_2 - game_1)\n\ndf_hnh_wide %>% arrange(desc(turnaround)) %>% head(10)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n# A tibble: 10 × 5\n   Season Opponent_School game_1 game_2 turnaround\n   <chr>  <chr>            <dbl>  <dbl>      <dbl>\n 1 2006   Virginia            -4     45         49\n 2 1993   Wake Forest        -26     18         44\n 3 1989   Virginia           -23     18         41\n 4 1997   Florida State      -13     28         41\n 5 1998   Florida State        8     48         40\n 6 1970   Clemson              5     44         39\n 7 2014   Wake Forest         -6     33         39\n 8 1965   Wake Forest        -22     16         38\n 9 1997   Wake Forest        -24     14         38\n10 1985   Clemson             -2     34         36\n```\n\n\n:::\n\n```{.r .cell-code}\np <- df_hnh_wide %>% mutate(RWera = ifelse(Season >= 2004, TRUE, FALSE)) %>%\n                      ggplot(aes(x = turnaround)) + \n                      geom_density(aes(colour = factor(RWera)))\n```\n:::\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

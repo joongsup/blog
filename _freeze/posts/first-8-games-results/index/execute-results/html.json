@@ -1,0 +1,15 @@
+{
+  "hash": "4586fb1a383809951ea44a0159c56861",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: First 8 games results\ndate: '2018-12-01'\ndraft: true\n\n---\n\n::: {.cell}\n\n```{.r .cell-code}\n# Load libraries for R\n\nsuppressPackageStartupMessages(library(ggplot2))\nsuppressPackageStartupMessages(library(dplyr))\nsuppressPackageStartupMessages(library(uncmbb)) # dataset\nn <- 8\ndf_n <- unc %>% group_by(Season) %>% \n             arrange(Game_Date) %>%\n             top_n(-n, Game_Date)\n\n\na <- df_n %>% group_by(Season) %>%\n          summarize(wins = sum(Result == \"W\"), losses = sum(Result == \"L\")) %>%\n          left_join(mbb_champ_season(unc), by = \"Season\") \n\nb <- a %>% ggplot(aes(x = losses)) +\n            geom_bar()\n```\n:::\n\n::: {.cell}\n\n```{.r .cell-code}\ndf_pre12 <- unc %>% group_by(Season) %>%\n                  filter(as.numeric(substring(Game_Date, 6, 7)) %in% c(10, 11)) %>%\n                  summarize(games = n(), wins = sum(Result == \"W\"), losses = sum(Result == \"L\"))\n\nb <- df_pre12 %>% ggplot(aes(x = losses)) + \n              geom_bar()\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

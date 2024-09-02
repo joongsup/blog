@@ -1,0 +1,15 @@
+{
+  "hash": "34d6146da80cbfb91da0c7418cf561b6",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: 3 game losing streak\ndate: '2018-01-30'\ndraft: true\n---\n\n\n\nHere we go again. 3 Ls in a row. When was the last time we had this kind of losing skid? \n\n\n\n\n\n\n\nSo the last time there was a 3-game losing streak was back in 2014, and to my surprise,  \n\n\n\n\n\n\n\nI got curious as to what the worst losing streak was since 1950 season. To do that I'm looking at the number of seasons with losing streaks up to certain nuber. \n\n\n\n\n\n\n\nSo as seen earlier, one in every four seasons, we've seen at least one occasion of 3-game losing streaks. What gets me is that there's been seasons in which we had 4+ game losing streaks! Let's see what those seasons were and what were those games for those seasons with at least one 6-game losing streaks. \n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

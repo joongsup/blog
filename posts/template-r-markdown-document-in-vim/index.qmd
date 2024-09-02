@@ -1,0 +1,58 @@
+---
+title: R Markdown template in Vim
+date: '2019-12-16'
+draft: yes
+---
+
+In my last post, I wrote about an R Markdown centered data analysis workflow that I found to be helpful for many of my work. Helpful, in terms of improving code reusability and remembering what has been done for a particular project. Idea is that I'd start any (ad-hoc) data analysis project with a home Rmd document to store both codes and narratives. 
+
+It followed naturally that I soon started hoping to start a new Rmd document with some predefined default setting in Vim, e.g., metadata such as title, date, and output options, etc., as well as R packages that I'd use all the time. I knew RStudio IDE provides template functionality, but I wanted to be able to do it in the tool/environment that I spend most time in daily. So I started looking around, and quickly ran into several blog posts on how to use Vim templates^[I followed this blog [post](https://shapeshed.com/vim-templates/) on how to use Vim templates].
+
+It comes down to the following two components:
+
+1. a skeleton file for a specific target file extension, e.g., an Rmd skeleton file (for .Rmd files), and
+2. Vim commands to insert the contents of the skeleton file to the newly created file with the target extension
+
+For example, an Rmd skeleton file (e.g., skeleton.Rmd) can contain yaml headers and an R setup chunk like below.
+
+````
+---
+title: ""
+date: "yyyy-mm-dd (updated 'r Sys.Date()')"
+output:
+    html_document:
+        toc: true
+        number_sections: true
+        theme: flatly
+        highlight: kate
+---
+````
+
+````markdown
+`r ''````{r setup_r, eval = FALSE}
+library(ggplot2)
+library(dplyr)
+library(kableExtra)
+library(reticulate)
+knitr::opts_chunk$set(fig.width = 12, fig.height = 8)
+
+use_python(PYTHON_PATH) # PYTHON_PATH defined in .Rprofile
+
+# Introduction
+
+````
+
+While not the main topic, I had to look up how to display my yaml headers and R code chunk verbatim in a post like above, and found out some tricks from the code [repo](https://github.com/rstudio/rmarkdown-book/blob/master/02-basics.Rmd) for the R Markdown: The Definitive Guide book.
+
+Once skeleton.Rmd is ready (e.g., ~/.vim/templates/skeleton.Rmd), Vim can insert the contents of the skeleton file to the newly created .Rmd file with autocmd like so:
+
+```{{sh, eval = FALSE}}
+if has("autocmd")
+  augroup templates
+    autocmd BufNewFile *.Rmd 0r ~/.vim/templates/skeleton.Rmd
+  augroup END
+endif
+
+```
+
+Above Vim codes resides in .vimrc file and reads in the skeleton.Rmd file whenever a new .Rmd file is created. 

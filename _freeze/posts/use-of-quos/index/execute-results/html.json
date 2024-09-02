@@ -1,0 +1,15 @@
+{
+  "hash": "b5d849af41fd1d42b85387298a2d1b2a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Use of quos\ndate: '2018-04-20'\ndraft: true\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nsuppressPackageStartupMessages(library(uncmbb))\nsuppressPackageStartupMessages(library(tidyverse))\nsuppressPackageStartupMessages(library(jutilr))\n\nhead(unc) \n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n  Season  Game_Date Game_Day Type Where   Opponent_School Result Tm Opp   OT\n1   1950 1949-12-01      Thu  REG     H              Elon      W 57  39 <NA>\n2   1950 1949-12-03      Sat  REG     A          Richmond      W 58  50 <NA>\n3   1950 1949-12-05      Mon  REG     A     Virginia Tech      L 48  62 <NA>\n4   1950 1949-12-07      Wed  REG     A      Lenoir-Rhyne      L 78  79   OT\n5   1950 1949-12-09      Fri  REG     H George Washington      L 44  54 <NA>\n6   1950 1949-12-28      Wed  REG     N     West Virginia      L 50  58 <NA>\n```\n\n\n:::\n\n```{.r .cell-code}\nplot1 <- function(lst, x, y){\n  \n  x <- enquo(x)\n  y <- enquo(y)\n  \n  x_name <- quo_name(x)\n  y_name <- quo_name(y)\n  \n  lst %>% map(function(df) df %>% \n                ggplot(aes_string(x = paste0(\"reorder(\", x_name, \", -\", y_name, \")\"), y = y_name)) +\n                geom_bar(stat = \"identity\") +\n                geom_text(aes(label = n), vjust = -0.2) +\n                theme_bw() +\n                scale_y_continuous(label = scales::percent) +\n                labs(title = paste0(\"Frequency of \", x_name)))\n\n}\n\nteams <- list(unc, duke)\n\nget_freq <- function(df, var){\n  var <- enquo(var)\n  df %>% count(!!var) %>% \n          arrange(desc(n)) %>%\n          add_percent(var = \"n\")\n}\nteams %>% map(function(df) df %>% get_freq(Opponent_School) %>% head)\n```\n\n::: {.cell-output .cell-output-stderr}\n\n```\nWarning: `mutate_()` was deprecated in dplyr 0.7.0.\nℹ Please use `mutate()` instead.\nℹ See vignette('programming') for more help\nℹ The deprecated feature was likely used in the jutilr package.\n  Please report the issue to the authors.\n```\n\n\n:::\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[[1]]\n       Opponent_School   n       perc\n1                 Duke 184 0.08137992\n2 North Carolina State 171 0.07563025\n3          Wake Forest 158 0.06988058\n4             Virginia 143 0.06324635\n5              Clemson 142 0.06280407\n6             Maryland 142 0.06280407\n\n[[2]]\n       Opponent_School   n       perc\n1       North Carolina 184 0.08148804\n2          Wake Forest 177 0.07838795\n3 North Carolina State 166 0.07351639\n4             Maryland 146 0.06465899\n5             Virginia 141 0.06244464\n6              Clemson 129 0.05713020\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
